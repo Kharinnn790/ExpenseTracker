@@ -54,9 +54,9 @@ CREATE TABLE WatchHistory (
 INSERT INTO Users (username, password_hash, email, created_at, updated_at) VALUES
 ('john_doe', 'hashed_password_1', 'john@example.com', NOW(), NOW()),
 ('jane_smith', 'hashed_password_2', 'jane@example.com', NOW(), NOW()),
-('alice_wonder', 'hashed_password_3', 'alice@example.com', NOW(), NOW());
-('alex_kelvin', 'hashed_password_4', 'alexkel@example.com', NOW(), NOW());
-('ilya_kharin','hashed_password_5','ilya@example.com', NOW(), NOW());
+('alice_wonder', 'hashed_password_3', 'alice@example.com', NOW(), NOW()),
+('alex_kelvin', 'hashed_password_4', 'alexkel@example.com', NOW(), NOW()),
+('ilya_kharin','hashed_password_5','ilya@example.com', NOW(), NOW()),
 ('david_guetta','hashed_password_6','david@example.com', NOW(), NOW());
 
 INSERT INTO Categories (name, created_at, updated_at) VALUES
@@ -64,7 +64,7 @@ INSERT INTO Categories (name, created_at, updated_at) VALUES
 ('Drama', NOW(), NOW()),
 ('Comedy', NOW(), NOW()),
 ('Documentary', NOW(), NOW()),
-('Thriller', NOW(), NOW());
+('Thriller', NOW(), NOW()),
 ('Horror', NOW(), NOW());
 
 INSERT INTO Movies (title, description, release_date, category_id, created_by, created_at, updated_at) VALUES
@@ -72,16 +72,21 @@ INSERT INTO Movies (title, description, release_date, category_id, created_by, c
 ('Drama Movie 1', 'A touching drama about life and relationships.', '2022-05-20', 2, 2, NOW(), NOW()),
 ('Comedy Movie 1', 'A hilarious comedy that will make you laugh.', '2021-11-10', 3, 3, NOW(), NOW()),
 ('Documentary Movie 1', 'An insightful documentary about nature.', '2020-07-30', 4, 1, NOW(), NOW()),
-('Thriller Movie 1', 'A suspenseful thriller that keeps you on the edge.', '2022-03-12', 5, 2, NOW(), NOW());
+('Thriller Movie 1', 'A suspenseful thriller that keeps you on the edge.', '2022-03-12', 5, 2, NOW(), NOW()),
+('Horror Movie 1', 'An extensive and diverse range of films designed to evoke a sense of fear, anxiety and uncertainty in the audience.', '2016-10-30', 3, 5, NOW(), NOW());
 
 INSERT INTO Subscriptions (user_id, start_date, end_date, status, created_at, updated_at) VALUES
 (1, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 'active', NOW(), NOW()),
 (2, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 'active', NOW(), NOW()),
-(3, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 'inactive', NOW(), NOW());
+(3, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 'inactive', NOW(), NOW()),
+(4, NOW(), DATE_ADD(NOW(), INTERVAL 15 DAY), 'active', NOW(), NOW()),
+(5, NOW(), DATE_ADD(NOW(), INTERVAL 60 DAY), 'active', NOW(), NOW()),
+(6, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY), 'inactive', NOW(), NOW());
 
 INSERT INTO WatchHistory (user_id, movie_id, watched_at) VALUES
 (1, 1, NOW()),
 (1, 3, NOW()),
 (2, 2, NOW()),
 (2, 5, NOW()),
-(3, 4, NOW());
+(3, 4, NOW()),
+(2, 3, NOW());
